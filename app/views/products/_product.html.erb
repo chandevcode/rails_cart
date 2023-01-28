@@ -1,0 +1,14 @@
+<div id="<%= dom_id product %>">
+  <td></td>
+  <td><%= product.name %></td>
+
+  <td><%= product.description %></td>
+  <td><%= product.price %></td>
+  <td> <%= form_with(url: cart_add_path) do |f| %>
+    <%= f.hidden_field :id, value: product.id %>
+    <%= f.number_field :quantity, value:0, min:1 %>
+    <%= f.submit "Add", class:"btn btn-success" %>
+  <% end %><%= link_to "Show ", product %></td>
+  <td>      
+  </td>
+</div>
