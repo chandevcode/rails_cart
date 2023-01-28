@@ -2,20 +2,17 @@
   <% product = orderable.product %>
   <div id="<%= "cart-#{product.id}" %>">
     <div class="d-flex flex-content-evenly">
-      <div>
+
         <strong>Name:</strong> 
         <%= product.name %>  
-      </div>
-      <div>
+        <br />
         <strong>Description:</strong> 
         <%= product.description %>
-
-      </div>
-      <div>
+        <br />
         <strong>Price:</strong> 
         <%= product.price %> 
-      </div>
 
+        <br />
 
       <%= form_with(url: cart_add_path) do |f| %>
         <%= f.hidden_field :id, value: product.id %>

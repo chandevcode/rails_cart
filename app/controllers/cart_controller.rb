@@ -16,8 +16,7 @@ class CartController < ApplicationController
     end 
     respond_to do |format|
       format.turbo_stream do
-        render turbo_stream: [turbo_stream.replace('cart', partial: 'cart/cart', locals: {cart:@cart}),
-          turbo_stream.replace(@product)]
+        render turbo_stream: turbo_stream.replace('cart', partial: 'cart/cart', locals: {cart:@cart})
       end
     end
   end
